@@ -1,0 +1,350 @@
+@import "tailwindcss";
+
+/* ==========================================================
+   SmartTodo - Precise Apple Design System (DESIGN-apple.md)
+   ========================================================== */
+
+/* 1. Root Tokens */
+:root {
+  --colors-primary: #0066cc;               /* Action Blue */
+  --colors-primary-focus: #0071e3;         /* Focus Blue */
+  --colors-primary-on-dark: #2997ff;       /* Sky Link Blue */
+  --colors-ink: #1d1d1f;                   /* Near-Black Copy */
+  --colors-body: #1d1d1f;
+  --colors-body-on-dark: #ffffff;
+  --colors-body-muted: #cccccc;
+  --colors-ink-muted-80: #333333;
+  --colors-ink-muted-48: #7a7a7a;
+  
+  --colors-divider-soft: #f0f0f0;
+  --colors-hairline: #e0e0e0;
+  
+  --colors-canvas: #ffffff;                 /* Pure White */
+  --colors-canvas-parchment: #f5f5f7;       /* Apple Signature Off-White */
+  --colors-surface-pearl: #fafafc;          /* Pearl button fill */
+  
+  --colors-surface-tile-1: #272729;         /* Alternating Dark Tile */
+  --colors-surface-tile-2: #2a2a2c;
+  --colors-surface-tile-3: #252527;
+  --colors-surface-black: #000000;          /* True Black */
+  --colors-surface-chip-translucent: rgba(210, 210, 215, 0.64);
+
+  --colors-success: #34c759;                /* Apple Green */
+  --colors-warning: #ff9500;                /* Apple Orange */
+  --colors-danger: #ff3b30;                 /* Apple Red */
+  
+  /* Radii scale precisely mapped */
+  --rounded-none: 0px;
+  --rounded-xs: 5px;
+  --rounded-sm: 8px;
+  --rounded-md: 11px;
+  --rounded-lg: 18px;
+  --rounded-pill: 9999px;
+  --rounded-full: 9999px;
+
+  /* Spacing system snaps */
+  --spacing-xxs: 4px;
+  --spacing-xs: 8px;
+  --spacing-sm: 12px;
+  --spacing-md: 17px;
+  --spacing-lg: 24px;
+  --spacing-xl: 32px;
+  --spacing-xxl: 48px;
+  --spacing-section: 80px;
+
+  --sidebar-width: 240px;
+  --sidebar-collapsed: 68px;
+  --navbar-height: 44px;      /* global-nav standard height */
+  --sub-nav-height: 52px;    /* sub-nav-frosted standard height */
+}
+
+/* System overrides for Dark Mode */
+.dark {
+  --colors-canvas: #000000;                 /* True Black dark mode base */
+  --colors-canvas-parchment: #1d1d1f;       /* Elevated dark grey canvas background */
+  --colors-surface-pearl: #272729;
+  --colors-hairline: #333336;
+  --colors-divider-soft: #2d2d2f;
+  --colors-ink: #f5f5f7;
+  --colors-body: #f5f5f7;
+  --colors-primary: #2997ff;               /* Sky Blue replaces Action Blue on dark surfaces */
+}
+
+/* 2. Global Base Reset */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: SF Pro Text, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  background-color: var(--colors-canvas-parchment);
+  color: var(--colors-ink);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  line-height: 1.47;
+  letter-spacing: -0.374px;
+  transition: background-color 0.3s cubic-bezier(0.25, 1, 0.5, 1),
+              color 0.3s cubic-bezier(0.25, 1, 0.5, 1);
+}
+
+/* 3. Typography Styles */
+.hero-display {
+  font-family: SF Pro Display, system-ui, -apple-system, sans-serif;
+  font-size: 56px;
+  font-weight: 600;
+  line-height: 1.07;
+  letter-spacing: -0.28px;
+}
+
+.display-lg {
+  font-family: SF Pro Display, system-ui, -apple-system, sans-serif;
+  font-size: 40px;
+  font-weight: 600;
+  line-height: 1.1;
+  letter-spacing: -0.01em;
+}
+
+.display-md {
+  font-family: SF Pro Text, system-ui, -apple-system, sans-serif;
+  font-size: 34px;
+  font-weight: 600;
+  line-height: 1.47;
+  letter-spacing: -0.374px;
+}
+
+.lead-copy {
+  font-family: SF Pro Display, system-ui, -apple-system, sans-serif;
+  font-size: 28px;
+  font-weight: 400;
+  line-height: 1.14;
+  letter-spacing: 0.196px;
+}
+
+.tagline-copy {
+  font-family: SF Pro Display, system-ui, -apple-system, sans-serif;
+  font-size: 21px;
+  font-weight: 600;
+  line-height: 1.19;
+  letter-spacing: 0.231px;
+}
+
+.body-strong {
+  font-family: SF Pro Text, system-ui, -apple-system, sans-serif;
+  font-size: 17px;
+  font-weight: 600;
+  line-height: 1.24;
+  letter-spacing: -0.374px;
+}
+
+.body-text {
+  font-family: SF Pro Text, system-ui, -apple-system, sans-serif;
+  font-size: 17px;
+  font-weight: 400;
+  line-height: 1.47;
+  letter-spacing: -0.374px;
+}
+
+.caption-text {
+  font-family: SF Pro Text, system-ui, -apple-system, sans-serif;
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 1.43;
+  letter-spacing: -0.224px;
+}
+
+.caption-strong {
+  font-family: SF Pro Text, system-ui, -apple-system, sans-serif;
+  font-size: 14px;
+  font-weight: 600;
+  line-height: 1.29;
+  letter-spacing: -0.224px;
+}
+
+.fine-print {
+  font-family: SF Pro Text, system-ui, -apple-system, sans-serif;
+  font-size: 12px;
+  font-weight: 400;
+  line-height: 1.0;
+  letter-spacing: -0.12px;
+}
+
+.micro-legal {
+  font-family: SF Pro Text, system-ui, -apple-system, sans-serif;
+  font-size: 10px;
+  font-weight: 400;
+  line-height: 1.3;
+  letter-spacing: -0.08px;
+}
+
+/* 4. Button Elements */
+.button-primary {
+  background-color: var(--colors-primary);
+  color: var(--colors-canvas);
+  font-family: SF Pro Text, system-ui, -apple-system, sans-serif;
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 1.29;
+  letter-spacing: -0.224px;
+  padding: 8px 16px;
+  border-radius: var(--rounded-pill);
+  border: none;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  transition: transform 0.15s cubic-bezier(0.25, 1, 0.5, 1), opacity 0.15s ease;
+}
+.button-primary:active {
+  transform: scale(0.95);
+}
+.button-primary:focus {
+  outline: 2px solid var(--colors-primary-focus);
+  outline-offset: 2px;
+}
+
+.button-secondary-pill {
+  background-color: transparent;
+  color: var(--colors-primary);
+  font-family: SF Pro Text, system-ui, -apple-system, sans-serif;
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 1.29;
+  letter-spacing: -0.224px;
+  padding: 7px 15px;
+  border: 1px solid var(--colors-primary);
+  border-radius: var(--rounded-pill);
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  transition: transform 0.15s cubic-bezier(0.25, 1, 0.5, 1);
+}
+.button-secondary-pill:active {
+  transform: scale(0.95);
+}
+
+.button-dark-utility {
+  background-color: var(--colors-ink);
+  color: var(--colors-body-on-dark);
+  font-family: SF Pro Text, system-ui, -apple-system, sans-serif;
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 1.29;
+  letter-spacing: -0.224px;
+  padding: 8px 15px;
+  border-radius: var(--rounded-sm);
+  border: none;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  transition: transform 0.15s cubic-bezier(0.25, 1, 0.5, 1);
+}
+.button-dark-utility:active {
+  transform: scale(0.95);
+}
+
+.button-pearl-capsule {
+  background-color: var(--colors-surface-pearl);
+  color: var(--colors-ink-muted-80);
+  font-family: SF Pro Text, system-ui, -apple-system, sans-serif;
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 1.29;
+  letter-spacing: -0.224px;
+  padding: 8px 14px;
+  border: 1px solid var(--colors-hairline);
+  border-radius: var(--rounded-md);
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  transition: transform 0.15s cubic-bezier(0.25, 1, 0.5, 1);
+}
+.button-pearl-capsule:active {
+  transform: scale(0.95);
+}
+
+/* 5. Minimal Hairline Cards and Layouts */
+.store-utility-card {
+  background-color: var(--colors-canvas);
+  color: var(--colors-ink);
+  border: 1px solid var(--colors-hairline);
+  border-radius: var(--rounded-lg);
+  padding: var(--spacing-lg);
+  /* No shadows on chrome UI cards */
+  box-shadow: none;
+  transition: border-color 0.2s ease, transform 0.2s cubic-bezier(0.25, 1, 0.5, 1);
+}
+.store-utility-card:hover {
+  border-color: var(--colors-primary);
+  transform: translateY(-2px);
+}
+
+/* Rounded standard iOS badge icons */
+.ios-badge {
+  display: inline-flex;
+  align-items: center;
+  padding: 3px 8px;
+  border-radius: var(--rounded-pill);
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: -0.12px;
+  text-transform: uppercase;
+}
+.ios-badge-high { background-color: rgba(255, 59, 48, 0.12); color: var(--colors-danger); }
+.ios-badge-medium { background-color: rgba(255, 149, 0, 0.12); color: var(--colors-warning); }
+.ios-badge-low { background-color: rgba(52, 199, 89, 0.12); color: var(--colors-success); }
+
+/* iOS style Checkbox element */
+.ios-checkbox {
+  width: 20px;
+  height: 20px;
+  border-radius: var(--rounded-full);
+  border: 1.5px solid var(--colors-hairline);
+  background-color: transparent;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: all 0.2s cubic-bezier(0.25, 1, 0.5, 1);
+}
+.ios-checkbox.checked {
+  background-color: var(--colors-success);
+  border-color: var(--colors-success);
+}
+
+/* Custom Scrollbars */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+::-webkit-scrollbar-thumb {
+  background: rgba(0, 0, 0, 0.12);
+  border-radius: 999px;
+}
+.dark ::-webkit-scrollbar-thumb {
+  background: rgba(255, 255, 255, 0.12);
+}
+
+/* Single Signature Drop Shadow for Product/Asset view context */
+.product-rest-shadow {
+  box-shadow: 0 5px 30px rgba(0, 0, 0, 0.22);
+}
+
+.page-container {
+  padding: var(--spacing-xl) var(--spacing-lg);
+  max-width: 1440px;
+  margin: 0 auto;
+}
+
+@media (max-width: 768px) {
+  .page-container {
+    padding: var(--spacing-md) var(--spacing-sm);
+  }
+}

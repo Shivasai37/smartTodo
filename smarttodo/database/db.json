@@ -1,0 +1,32 @@
+{
+  "users": [
+    {
+      "name": "shiva",
+      "email": "shiva@gmail.com",
+      "password": "$2a$10$l9s4ESYgFU7lzdvI78LXsu9rIFiHwDlEAFvItFcvD8HjmsoKiOHIy",
+      "createdAt": "2026-07-15T06:19:09.871Z",
+      "avatar": "https://ui-avatars.com/api/?name=shiva&background=6366f1&color=fff",
+      "id": 1,
+      "token": "d42dea9f-9cee-4422-8397-63d570047841"
+    }
+  ],
+  "todos": [
+    {
+      "userId": 1,
+      "title": "learn boostrap",
+      "description": "",
+      "priority": "medium",
+      "category": "general",
+      "status": "completed",
+      "favorite": false,
+      "reminder": null,
+      "deadline": null,
+      "createdAt": "2026-07-15T06:19:59.036Z",
+      "updatedAt": "2026-07-15T06:38:38.594Z",
+      "completedAt": "2026-07-15T06:38:38.594Z",
+      "deletedAt": null,
+      "id": 1
+    }
+  ],
+  "history": []
+}
